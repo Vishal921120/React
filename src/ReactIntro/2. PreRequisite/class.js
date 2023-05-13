@@ -20,7 +20,7 @@ const mycar = new Car("Ford");
 //Note: The constructor function is called automatically when the object is initialized.
 // To run this file:- First open this file location in termianl and then type Node <filename>.js and 
 // then press enter.
-console.log(mycar.brand); 
+// console.log(mycar.brand); 
 
 // Methods in Class : we can make our own methods in class
 class Car1{
@@ -34,4 +34,23 @@ class Car1{
 }
 
 const mycar1 = new Car1("Alto");
-console.log(mycar1.present());
+// console.log(mycar1.present());
+
+//Class inheritance :- use extends keyword
+
+class Model extends Car1 {
+    constructor(name , mod){
+        //The super() method refers to the parent class.
+        //By calling the super() method in the constructor method, 
+        //we call the parent's constructor method and get access to the parent's properties and methods.
+        super(name);
+        this.model = mod;
+    }
+
+    show(){
+        return this.present() + ' and its model is ' + this.model;
+    }
+}
+
+const mycar2 = new Model('wegnor', '500' );
+console.log(mycar2.show());
